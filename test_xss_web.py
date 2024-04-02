@@ -23,4 +23,4 @@ def index():
             <h1>Вы ввели: </h1>'''
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='192.168.206.147')
