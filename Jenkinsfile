@@ -7,7 +7,7 @@ pipeline{
         stage('first'){
             steps{
                 sh 'whoami'
-                sh 'pip install flask'
+                sh 'pip3 install flask'
                 sh 'python3 test_xss_web.py'
             }
         }
