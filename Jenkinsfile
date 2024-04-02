@@ -7,6 +7,7 @@ pipeline{
         stage('first'){
             steps{
                 sh 'whoami'
+                sh 'python3 test_xss_web.py'
             }
         }
     }
