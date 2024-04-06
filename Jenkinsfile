@@ -6,9 +6,9 @@ pipeline{
     stages{
         stage('first'){
             steps{
-                sh 'whoami'
-                sh 'pip3 install flask'
-                sh 'python3 test_xss_web.py'
+                withSonarQubeEnv(installationName: 'sonarQubeSAST'){
+                    sh './mvnw clean org.sonarsourse.scaner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+                }
             }
         }
     }
