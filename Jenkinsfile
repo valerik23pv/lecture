@@ -6,8 +6,10 @@ pipeline{
     stages{
         stage('first'){
             steps{
+                def scannerHome = tool 'sonarQubeSAST';
                 withSonarQubeEnv(installationName: 'sonarQubeSAST'){
-                    sh './mvnw clean org.sonarsourse.scaner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+                    
+                    sh '${scannerHome}/bin/sonar-scanner'
                 }
             }
         }
