@@ -1,16 +1,11 @@
-pipeline{
-    agent{
-        label 'slave_nedo_slave'
+node {
+  stage('SCM') {
+    checkout scm
+  }
+  stage('SonarQube Analysis') {
+    def scannerHome = tool 'sonarScanner';
+    withSonarQubeEnv() {
+      sh "${scannerHome}/bin/sonar-scanner"
     }
-
-    stages{
-        stage('first'){
-            steps{
-                withSonarQubeEnv(installationName: 'sonarQubeSAST'){
-                    
-                    sh 'sonarQubeSAST/bin/sonar-scanner'
-                }
-            }
-        }
-    }
+  }
 }
