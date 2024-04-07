@@ -9,6 +9,9 @@ node {
     }
   }
 
+stage('SCM'){
+  sh "trufflehog filesystem ${PWD}"
+}
   stage ('Quality Gate'){
     timeout(time: 5, unit: 'MINUTES') {
                 script {
@@ -18,5 +21,8 @@ node {
                     }
                 }
             }
+
   }
+
+
 }
