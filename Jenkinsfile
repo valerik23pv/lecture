@@ -9,7 +9,7 @@ node {
     }
   }
 
-stage('SCM'){
+stage('secrect search'){
   sh "trufflehog  --no-update --json filesystem ."
 }
   stage ('Quality Gate'){
