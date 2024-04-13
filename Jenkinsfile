@@ -10,7 +10,7 @@ node {
   }
 
 stage('SCM'){
-  sh "trufflehog  --no-update filesystem ${PWD}"
+  sh "trufflehog  --no-update filesystem ."
 }
   stage ('Quality Gate'){
     timeout(time: 5, unit: 'MINUTES') {
