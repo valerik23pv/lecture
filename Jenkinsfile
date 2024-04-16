@@ -11,7 +11,7 @@ node {
 
 stage('secrect search'){
   sh "trufflehog  --no-update filesystem . > ./result.txt"
-   "
+  sh "
   line = $(cat result.txt)
   if [[ -n $line ]]
   then
