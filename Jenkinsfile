@@ -9,10 +9,7 @@ node {
     }
   }
 
-stage('secrect search'){
-  sh "trufflehog  --no-update --json filesystem . > ./result.txt"
-  sh "bash script.sh"
-}
+
   stage ('Quality Gate'){
     timeout(time: 5, unit: 'MINUTES') {
                 script {
@@ -24,6 +21,9 @@ stage('secrect search'){
             }
 
   }
-
+  stage('secrect search'){
+    sh "trufflehog  --no-update --json filesystem . > ./result.txt"
+    sh "bash script.sh"
+}
 
 }
