@@ -11,8 +11,7 @@ node {
 
 stage('secrect search'){
   sh "trufflehog  --no-update filesystem . > ./result.txt"
-  sh "
-  line = $(cat result.txt)
+  sh `line = $(cat result.txt)
   if [[ -n $line ]]
   then
       echo 0
@@ -23,7 +22,7 @@ stage('secrect search'){
   then
       echo 1
       exit 1
-  fi"
+  fi`
 }
   stage ('Quality Gate'){
     timeout(time: 5, unit: 'MINUTES') {
