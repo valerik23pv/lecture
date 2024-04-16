@@ -5,13 +5,12 @@ while read line; do
 
 if [[ -n $line ]]
 then
-    echo 0
     ver=$(cat result.txt | jq '.Verified')
     echo $ver
-    exit 0
+    exit 1
 elif [[ -z $line ]]
 then
-    echo 1
-    exit 1
+
+    exit 0
 fi
 done < "result.txt"
