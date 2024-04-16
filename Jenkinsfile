@@ -10,19 +10,8 @@ node {
   }
 
 stage('secrect search'){
-  sh "trufflehog  --no-update filesystem . > ./result.txt"
-  sh `line = $(cat result.txt)
-  if [[ -n $line ]]
-  then
-      echo 0
-      ver=$(cat result.txt | jq '.Verified')
-      echo $ver
-      exit 0
-  elif [[ -z $line ]]
-  then
-      echo 1
-      exit 1
-  fi`
+  sh "trufflehog  --no-update --json filesystem . > ./result.txt"
+  sh "bash script.sh"
 }
   stage ('Quality Gate'){
     timeout(time: 5, unit: 'MINUTES') {
