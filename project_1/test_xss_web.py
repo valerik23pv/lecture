@@ -1,5 +1,7 @@
 from flask import Flask,session, render_template, request
 import os
+
+
 folder = os.getcwd()
 app  = Flask(__name__, static_folder=folder, template_folder=folder)
 app.secret_key = 'hello'

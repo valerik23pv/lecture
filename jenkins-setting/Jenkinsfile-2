@@ -1,0 +1,9 @@
+node{
+    stage('build'){
+        sh 'python3 setup.py sdist'
+    }
+
+    stage('publish'){
+        sh 'twine upload -r nexus dist/*'
+    }
+}
