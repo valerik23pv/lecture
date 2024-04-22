@@ -25,5 +25,11 @@ node {
     sh "trufflehog  --no-update --json filesystem . > ./result.txt"
     sh "bash script.sh"
 }
+stage('build'){
+        sh 'python3 setup.py sdist'
+    }
 
+    stage('publish'){
+        sh 'twine upload -r nexus dist/*'
+    }
 }
