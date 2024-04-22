@@ -23,7 +23,7 @@ node {
   }
   stage('secrect search'){
     sh "trufflehog  --no-update --json filesystem . > ./jenkins-setting/result.txt"
-    sh "bash /jenkins-setting/script.sh"
+    sh "bash ./jenkins-setting/script.sh"
 }
 stage('build'){
         sh 'python3 setup.py sdist'
