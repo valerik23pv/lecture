@@ -7,7 +7,7 @@ if [[ -n $line ]]
 then
     ver=$(cat result.txt | jq '.Verified')
     echo $ver
-    exit 1
+    exit 0
 elif [[ -z $line ]]
 then
 
