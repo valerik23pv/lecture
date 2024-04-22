@@ -31,6 +31,6 @@ stage('build'){
 
     stage('publish'){
       sh 'pip install twine'
-        twine upload -r nexus dist/*
+        sh 'twine upload -r nexus dist/*'
     }
 }
