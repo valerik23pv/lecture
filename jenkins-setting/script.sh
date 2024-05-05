@@ -13,4 +13,4 @@ then
 
     exit 0
 fi
-done < "result.txt"
+done < result.txt
