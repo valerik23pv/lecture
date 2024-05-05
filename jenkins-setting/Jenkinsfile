@@ -22,7 +22,7 @@ node {
 
   }
   stage('secrect search'){
-    sh "trufflehog  --no-update --json filesystem . > ./../jenkins-setting/result.txt"
+    sh "trufflehog  --no-update --json filesystem ./project_1/ > ./jenkins-setting/result.txt"
     sh "bash ./jenkins-setting/script.sh"
 }
 stage('build'){
