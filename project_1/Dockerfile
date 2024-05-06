@@ -1,6 +1,6 @@
-FROM python:latest
-RUN pip install flask
-COPY . /app
-WORKDIR /app
-EXPOSE 5000
-CMD ["python" ,"./test_xss_web.py"]
+FROM python:3.8-slim-buster
+WORKDIR /project_1
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+COPY . .
+CMD [ "python3", "test_xss_web.py"]
