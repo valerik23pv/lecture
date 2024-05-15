@@ -2,7 +2,7 @@ from flask import Flask,session, render_template, request, redirect
 import sqlite3
 import os
 
-sqliteConnection = sqlite3.connect('.\\project_1\\twist.sqlite', check_same_thread=False)
+sqliteConnection = sqlite3.connect('twist.sqlite', check_same_thread=False)
 cursor = sqliteConnection.cursor()
 folder = os.getcwd()
 app  = Flask(__name__, static_folder=folder, template_folder=folder)
