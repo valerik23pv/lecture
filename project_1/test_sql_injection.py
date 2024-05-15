@@ -1,6 +1,6 @@
 import sqlite3
 
-sqliteConnection = sqlite3.connect('twist.sqlite')
+sqliteConnection = sqlite3.connect('/project_1/twist.sqlite')
 cursor = sqliteConnection.cursor()
 login = input("input login ")
 password = input("input password ")
