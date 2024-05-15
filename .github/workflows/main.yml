@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate Python SBOM
+      uses: CycloneDX/gh-python-generate-sbom@v2
+      with:
+        input: ./project_1/requirements.txt
+        output: ./bom.json
+        format: json
