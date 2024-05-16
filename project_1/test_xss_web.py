@@ -41,8 +41,8 @@ def index():
             return redirect('/search')
     return '''
     <form action="/" method="post">
-    <p>введите логин</p><input type="text" name="login">
-    <p>введите пароль</p><input type="text" name="password"><br>
+    <h2>введите логин</h2><input type="text" name="login">
+    <h2>введите пароль</h2><input type="text" name="password"><br>
     <input type="submit" value="Войти">
     </form>
 '''
