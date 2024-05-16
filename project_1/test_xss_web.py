@@ -22,7 +22,7 @@ def search_site():
                         </form>
                         <h1>Вы ввели: {a}</h1>'''
     return '''
-            <form action="/" method="get">
+            <form action="/search" method="get">
                 <input type="text" name="qq">
                 <input type="submit" value="Отправить">
             </form>
