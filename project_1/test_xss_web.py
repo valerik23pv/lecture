@@ -2,7 +2,7 @@ from flask import Flask,session, render_template, request, redirect
 import sqlite3
 import os
 
-sqliteConnection = sqlite3.connect('twist.sqlite', check_same_thread=False)
+sqliteConnection = sqlite3.connect('.\\project_1\\twist.sqlite', check_same_thread=False)
 cursor = sqliteConnection.cursor()
 folder = os.getcwd()
 app  = Flask(__name__, static_folder=folder, template_folder=folder)
@@ -27,7 +27,7 @@ def search_site():
                 <input type="submit" value="Отправить">
             </form>
             <h1>Вы ввели: </h1>'''
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST', 'PUT'])
 def index():
     if request.method == "POST":
         login = request.form.get('login')
@@ -46,6 +46,6 @@ def index():
     <input type="submit" value="Войти">
     </form>
 '''
-    pass
+    
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
